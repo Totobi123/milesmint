@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=no, minimal-ui">
+
+    <!-- Enhanced Android-specific optimizations -->
+    <meta name="theme-color" content="#ff4757">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="application-name" content="WireMint">
+
+    <!-- Android Chrome optimizations -->
+    <meta name="google-site-verification" content="">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Prevent Android keyboard zoom -->
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-navbutton-color" content="#ff4757">
+
+    <!-- Enhanced security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-ancestors 'none';">
+
+    <!-- Prevent caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, private">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Apple iOS optimizations -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="WireMint">
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <!-- Enhanced mobile optimizations -->
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-navbutton-color" content="#ff4757">
+    <meta name="msapplication-starturl" content="/">
+
+    <!-- Android Chrome customization -->
+    <meta name="msapplication-TileColor" content="#ff4757">
+    <meta name="msapplication-TileImage" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iI2ZmNDc1NyIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIj5XPC90ZXh0Pgo8L3N2Zz4=">
+
+    <!-- Prevent zoom on input focus (Android) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- Progressive Web App -->
+    <meta name="description" content="WireMint - Secure Crypto-to-Bank Gateway">
+    <meta name="keywords" content="crypto, banking, secure, withdrawal, transfer">
+
+    <title>WireMint - Secure Crypto Banking</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiV2lyZU1pbnQiLCJzaG9ydF9uYW1lIjoiV2lyZU1pbnQiLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJ0aGVtZV9jb2xvciI6IiNmZjQ3NTciLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBhMGEwYSIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlNakEwSWlCb1pXbG5hSFE5SWpJd05DSWdkbWxsZDBKdmVEMGlNQ0F3SURJD05DQXlNRFFpUGdvZ0lEeGpaSEpoWTJzZ1ptbHNiRDBpWXpRME5UWTVJU0krUEM5a1pXWnpQZ284Y21WamRDQjNhV1IwYUQwaU1qQTBJaUJvWldsbmFIUTlJakl3TkNJZ1ptbHNiRDBpZFhKc0tDTm5jbUZrS1NJdlBqeDBaWGgwSUhnOUlqUXdJaUI1UFNJMU1DSWdhSFY2TFdGdVkyaHZjakoxYm1sa1pTQWdOQ0F3SURFd01DQXhNREFpSUdac2NHeHBaV2QwY2ozZVFVaGplRGdpUGxjaWNtWTNJQ2d6VERJd1BTSmtZWEpyWlNJK1BDOTBaWGgwUGp3dmMzWm5QajRLZXdvaVptbHNiRDBpSXpZMk5tTWlMQ0FpYUdWcFoyaDBJam9pTXpJaUxDQWlkMmxrZEdnaU9pSXpNaUpEIn1dfQ==">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Performance optimizations for low-end devices -->
+    <meta name="resource-type" content="document">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Reduce memory usage on low-end devices -->
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+    <meta name="msapplication-config" content="none">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNmZjQ3NTciLz4KICA8dGV4dCB4PSIxNiIgeT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+VzwvdGV4dD4KPC9zdmc+">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Security headers simulation -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' data: https:;">
+
+    <style>
+        /* Code Protection Styles */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        /* Disable text selection on mobile */
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hide developer tools detection overlay */
+        .dev-tools-warning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #ff4757;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 99999;
+            text-align: center;
+        }
+
+        /* GenX Footer Styles */
+        .genx-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 71, 87, 0.2);
+            padding: 8px 0;
+            z-index: 1000;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin: 0;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .genx-brand {
+            color: var(--primary-red);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+            animation: brandGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes brandGlow {
+            0% { 
+                text-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 15px rgba(255, 71, 87, 0.8);
+                transform: scale(1.05);
+            }
+        }
+
+        /* Adjust page content to account for footer */
+        .page {
+            padding-bottom: 50px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .genx-footer {
+                padding: 6px 0;
+                font-size: 0.7rem;
+            }
+
+            .page {
+                padding-bottom: 40px;
+            }
+        }
+
+        /* Additional styles for accessibility and mobile optimization */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-bg), var(--dark-card));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .loading-screen.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .loading-logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .loading-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary-red), #ff6b7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 71, 87, 0.3);
+            border-top: 3px solid var(--primary-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        /* Enhanced focus styles */
+        .btn-primary:focus-visible,
+        .continue-btn:focus-visible,
+        .close-receipt-btn:focus-visible,
+        .agree-btn:focus-visible {
+            outline: 3px solid var(--primary-red);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 6px rgba(255, 71, 87, 0.2);
+        }
+
+        /* High contrast mode adjustments */
+        @media (prefers-contrast: high) {
+            .card {
+                border-width: 2px;
+                border-color: var(--primary-red);
+            }
+
+            .activation-icon,
+            .success-icon,
+            .action-icon {
+                filter: contrast(200%);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .loading-logo,
+            .activation-icon,
+            .loading-spinner {
+                animation: none;
+            }
+        }
+
+        /* Notification Styles */
+        .notification {
+            background: rgba(25, 25, 25, 0.98);
+            border: 2px solid var(--primary-red);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            transform: translateX(350px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+            opacity: 0.8;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .notification.success {
+            border-color: var(--success-green);
+        }
+
+        .notification.success::before {
+            background: linear-gradient(90deg, transparent, var(--success-green), transparent);
+        }
+
+        .notification-icon {
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Developer Tools Warning -->
+    <div id="devToolsWarning" class="dev-tools-warning">
+        <div>
+            <h1>🚨 ACCESS DENIED 🚨</h1>
+            <p>Developer tools are disabled for security reasons</p>
+            <p>Close developer tools to continue</p>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">⚡</div>
+            <div class="loading-text">WireMint</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Activation Page -->
+    <div id="activationPage" class="page active" role="main" aria-label="Account Activation">
+        <!-- Success Stories Section -->
+        <section id="successStories" class="success-stories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="gradient-text">🎯 Live Success Stories</span>
+                        <span class="live-indicator">● LIVE</span>
+                    </h2>
+                    <p class="section-subtitle">Real Nigerians Making Real Money with WireMint</p>
+                </div>
+
+                <!-- Live Stats -->
+                <div class="live-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalUsers">47,329</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">₦<span id="totalWithdrawn">2.8B</span></div>
+                        <div class="stat-label">Total Withdrawn</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="successRate">97.3%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="onlineNow">1,247</div>
+                        <div class="stat-label">Online Now</div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Slider -->
+                <div class="testimonials-container">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Testimonial cards will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- All-in-One Tools Overview -->
+                <div class="tools-overview-section">
+                    <h3 class="tools-title">🛠️ Complete Toolkit - 11 Premium Tools in One App</h3>
+                    <p class="tools-subtitle">Stop buying expensive individual tools! Get everything you need at a fraction of the cost.</p>
+
+                    <div class="tools-comparison">
+                        <div class="comparison-card individual-cost">
+                            <h4>❌ Buying Separately</h4>
+                            <div class="cost-breakdown">
+                                <div class="cost-item">
+                                    <span>Crypto Extractor</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Bank Cracker</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>ATM Card Gen</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Flash Funds</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Format Generator</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Client Generator</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Gift Card Gen</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>SMS Reader</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Balance Adder</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Transfer Tools</span>
+                                    <span>₦50000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>ATM Withdrawal</span>
+                                    <span>₦50000</span>
+                                </div>
+                            </div>
+                            <div class="total-cost">
+                                <strong>Total: ₦1,050,000</strong>
+                            </div>
+                        </div>
+
+                        <div class="comparison-card wiremint-cost">
+                            <h4>✅ WireMint All-in-One</h4>
+                            <div class="wiremint-features">
+                                <div class="feature-item">✓ All 11 Premium Tools</div>
+                                <div class="feature-item">✓ Regular Updates</div>
+                                <div class="feature-item">✓ 24/7 Support</div>
+                                <div class="feature-item">✓ Android Optimized</div>
+                                <div class="feature-item">✓ Secure & Anonymous</div>
+                                <div class="feature-item">✓ One-time Payment</div>
+                                <div class="feature-item">✓ Lifetime Access</div>
+                            </div>
+                            <div class="wiremint-price">
+                                <div class="original-price">Worth ₦50000</div>
+                                <div class="current-price">Only ₦25000</div>
+                                <div class="savings">Save ₦1,025,000!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tools-grid">
+                        <div class="tool-preview">
+                            <span class="tool-icon">₿</span>
+                            <span class="tool-name">Crypto Withdrawal</span>
+                            <span class="tool-desc">Extract from any wallet</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">🏦</span>
+                            <span class="tool-name">Bank Account Access</span>
+                            <span class="tool-desc">All Nigerian banks supported</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">💳</span>
+                            <span class="tool-name">ATM Card Generator</span>
+                            <span class="tool-desc">Visa, Mastercard, Verve</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">🏧</span>
+                            <span class="tool-name">ATM Withdrawal</span>
+                            <span class="tool-desc">No OTP required</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">⚡</span>
+                            <span class="tool-name">Flash Funds</span>
+                            <span class="tool-desc">Temporary balance show</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">🎁</span>
+                            <span class="tool-name">Gift Card Generator</span>
+                            <span class="tool-desc">Amazon, Steam, iTunes</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">📝</span>
+                            <span class="tool-name">Yahoo Formats</span>
+                            <span class="tool-desc">AI-powered scripts</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">👤</span>
+                            <span class="tool-name">Client Generator</span>
+                            <span class="tool-desc">Fake US profiles</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">📱</span>
+                            <span class="tool-name">SMS Reader</span>
+                            <span class="tool-desc">Read anyone's messages</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">🎯</span>
+                            <span class="tool-name">Balance Adder</span>
+                            <span class="tool-desc">Betting sites supported</span>
+                        </div>
+                        <div class="tool-preview">
+                            <span class="tool-icon">💸</span>
+                            <span class="tool-name">Transfer Tools</span>
+                            <span class="tool-desc">Move funds securely</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span>Bank-level Security</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span>Instant Withdrawals</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🛡️</span>
+                        <span>100% Anonymous</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">💰</span>
+                        <span>No Daily Limits</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <header class="header">
+                <h1 class="logo" role="banner">WireMint</h1>
+                <p class="subtitle">Secure Crypto-to-Bank Gateway</p>
+            </header>
+
+            <section class="activation-box card" aria-labelledby="activation-heading">
+                <div class="activation-icon" role="img" aria-label="Lightning bolt icon">⚡</div>
+                <h2 id="activation-heading">Account Activation Required</h2>
+                <p class="activation-text">Your unique security profile has been generated. Please secure your activation code to proceed.</p>
+
+                <div class="user-info" role="region" aria-label="User information">
+                    <div class="info-item">
+                        <span>User ID:</span>
+                        <span id="userId" aria-live="polite">Generating...</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Wallet Address:</span>
+                        <span id="walletAddress" aria-live="polite">Generating...</span>
+                    </div>
+                </div>
+
+                
+
+                <form class="activation-input" role="form" aria-label="Activation form">
+                    <label for="activationCode" class="sr-only">Activation Code</label>
+                    <input 
+                        type="text" 
+                        id="activationCode" 
+                        name="activationCode"
+                        placeholder="Enter Activation Code" 
+                        autocomplete="off" 
+                        autocapitalize="off"
+                        spellcheck="false"
+                        inputmode="text"
+                        aria-describedby="activation-help"
+                    />
+                    <button 
+                        type="button"
+                        id="activateBtn" 
+                        class="btn-primary"
+                        aria-describedby="activation-help"
+                    >
+                        <span>ACTIVATE ACCOUNT</span>
+                    </button>
+                </form>
+
+                <div class="contact-section" role="region" aria-label="Contact information">
+                    <p id="activation-help">Need activation code?</p>
+                    <div class="contact-options">
+                        <a 
+                            href="#" 
+                            id="telegramContact" 
+                            class="telegram-btn"
+                            role="button"
+                            aria-label="Contact WireMint on Telegram"
+                        >
+                            📱 Contact @WireMint on Telegram
+                        </a>
+                        <a 
+                            href="#" 
+                            id="whatsappContact" 
+                            class="whatsapp-btn"
+                            role="button"
+                            aria-label="Contact WireMint on WhatsApp Business"
+                        >
+                            💬 WhatsApp Business: +234 802 994 8909
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Activated Success Page -->
+    <div id="activatedPage" class="page" role="main" aria-label="Account Activated">
+        <div class="container">
+            <section class="success-box card" aria-labelledby="success-heading">
+                <div class="success-icon" role="img" aria-label="Success checkmark">✓</div>
+                <h2 id="success-heading">Account Activated!</h2>
+                <p>Your WireMint account is now ready to use. Welcome to the secure gateway.</p>
+
+                <div class="account-details" role="region" aria-label="Account details">
+                    <div class="detail-item">
+                        <span>Account Status:</span>
+                        <span class="status-active" aria-label="Account is active">● Activated</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>User ID:</span>
+                        <span id="activatedUserId" class="font-mono"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Wallet Address:</span>
+                        <span id="activatedWallet" class="font-mono"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Security Level:</span>
+                        <span style="color: var(--success-green);">Maximum</span>
+                    </div>
+                </div>
+
+                <button 
+                    id="continueBtn" 
+                    class="continue-btn"
+                    aria-label="Continue to dashboard"
+                >
+                    Continue to Dashboard
+                </button>
+
+                <div class="security-notice" role="region" aria-label="Security information">
+                    <p><strong>🔒 Security Notice</strong></p>
+                    <p>Your activation code is encrypted and secure. Never share it with anyone except our official support. All transactions are end-to-end encrypted.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal" role="dialog" aria-labelledby="disclaimer-title" aria-modal="true">
+        <div class="modal-content">
+            <header class="disclaimer-header">
+                <h3 id="disclaimer-title">⚠️ WireMint - Dark Web Gateway</h3>
+            </header>
+            <div class="disclaimer-content">
+                <p class="warning-text">This application was obtained from dark web sources and utilizes advanced cryptographic protocols for financial exploitation.</p>
+
+                <div class="feature-list" role="list" aria-label="Application features">
+                    <p role="listitem">• Crypto wallet infiltration algorithms</p>
+                    <p role="listitem">• Bank account penetration tools</p>
+                    <p role="listitem">• Betting platform exploitation (Coming Soon)</p>
+                </div>
+
+                <div class="limit-warning" role="region" aria-label="Usage benefits">
+                    <p><strong>💰 UNLIMITED WITHDRAWALS</strong></p>
+                    <p>No daily limits • No monthly caps</p>
+                    <p>Withdraw millions daily with zero restrictions</p>
+                </div>
+
+                <div class="karma-warning" role="region" aria-label="Important warning">
+                    <p class="karma-text">⚠️ WARNING: What you do to people, people will also do to you. Use responsibly.</p>
+                </div>
+
+                <button 
+                    id="agreeBtn" 
+                    class="agree-btn"
+                    aria-label="I understand and agree to proceed"
+                >
+                    I Understand - Proceed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="page" role="main" aria-label="Dashboard">
+        <div class="container">
+            <header class="dashboard-header">
+                <div>
+                    <h1>WireMint</h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Secure Financial Gateway</p>
+                </div>
+                <button 
+                    id="logoutBtn" 
+                    class="logout-btn"
+                    aria-label="Logout from account"
+                >
+                    🚪 Logout
+                </button>
+            </header>
+
+            <section class="balance-section" aria-label="Account balance">
+                <div class="balance-card card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3>Available Balance</h3>
+                        <div id="masterIndicator" style="display: none; color: var(--success-green); font-weight: 700; font-size: 0.8rem;">
+                            🔥 MASTER ACCESS 🔥
+                        </div>
+                    </div>
+                    <div class="balance-amount"><span class="naira-symbol"></span><span id="userBalance">0.00</span></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; font-size: 0.8rem;">
+                        <div style="color: var(--text-muted);">
+                            <div>Security Level: <span style="color: var(--success-green);">MAXIMUM</span></div>
+                            <div id="dailyLimitText">Daily Limit: ₦70,000</div>
+                        </div>
+                        <div style="color: var(--text-muted);">
+                            <div>Network: <span style="color: var(--success-green);">SECURE</span></div>
+                            <div>Device Trust: <span style="color: var(--success-green);">95%</span></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,```
+255,255,0.1); display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dark);">
+                        <span>Last sync: Just now</span>
+                        <span>Session: Active</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="actions-grid" role="region" aria-label="Available actions">
+                <button 
+                    class="action-btn card" 
+                    id="withdrawCryptoBtn"
+                    aria-label="Withdraw from crypto wallet"
+                >
+                    <div class="action-icon" role="img" aria-label="Bitcoin icon">₿</div>
+                    <div>
+                        <span>Withdraw from Crypto</span>
+                        <p>Extract from wallets</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="withdrawBankBtn"
+                    aria-label="Withdraw from bank account"
+                >
+                    <div class="action-icon" role="img" aria-label="Bank icon">🏦</div>
+                    <div>
+                        <span>Withdraw from Bank</span>
+                        <p>Access bank accounts</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="transferBtn"
+                    aria-label="Transfer funds"
+                >
+                    <div class="action-icon" role="img" aria-label="Transfer icon">💸</div>
+                    <div>
+                        <span>Transfer Funds</span>
+                        <p>Move your balance</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="giftCardBtn"
+                    aria-label="Generate gift cards"
+                >
+                    <div class="action-icon" role="img" aria-label="Gift card icon">🎁</div>
+                    <div>
+                        <span>Gift Card Generator</span>
+                        <p>Generate premium cards</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="atmCardBtn"
+                    aria-label="ATM card withdrawal"
+                >
+                    <div class="action-icon" role="img" aria-label="ATM card icon">🏧</div>
+                    <div>
+                        <span>ATM Card Withdrawal</span>
+                        <p>Withdraw without OTP</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="cardGeneratorBtn"
+                    aria-label="Generate ATM cards"
+                >
+                    <div class="action-icon" role="img" aria-label="Card generator icon">💳</div>
+                    <div>
+                        <span>ATM Card Generator</span>
+                        <p>Generate premium cards</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="flashFundsBtn"
+                    aria-label="Flash funds to crypto wallet"
+                >
+                    <div class="action-icon" role="img" aria-label="Flash funds icon">⚡</div>
+                    <div>
+                        <span>Flash Funds</span>
+                        <p>Flash funds to wallets</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="sportybetBtn"
+                    aria-label="Sportybet balance adder"
+                >
+                    <div class="action-icon" role="img" aria-label="Sportybet icon">🎯</div>
+                    <div>
+                        <span>Sportybet Balance Adder</span>
+                        <p>Add balance to betting sites</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="formatGeneratorBtn"
+                    aria-label="Format Generator"
+                >
+                    <div class="action-icon" role="img" aria-label="Format generator icon">📝</div>
+                    <div>
+                        <span>Format Generator</span>
+                        <p>Generate Yahoo formats with AI</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="clientGeneratorBtn"
+                    aria-label="Client Generator"
+                >
+                    <div class="action-icon" role="img" aria-label="Client generator icon">👤</div>
+                    <div>
+                        <span>Client Generator</span>
+                        <p>Generate fake US client profiles</p>
+                    </div>
+                </button>
+
+                <button 
+                    class="action-btn card" 
+                    id="simeroSmsBtn"
+                    aria-label="Simero SMS Reader"
+                >
+                    <div class="action-icon" role="img" aria-label="Simero SMS Reader icon">📱</div>
+                    <div>
+                        <span>Simero SMS Reader</span>
+                        <p>Read anyone's SMS messages</p>
+                    </div>
+                </button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Withdraw Crypto Page -->
+    <div id="withdrawCryptoPage" class="page" role="main" aria-label="Crypto withdrawal">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Withdraw from Crypto Wallet</h2>
+            </header>
+
+            <section class="form-section">
+                <form role="form" aria-label="Crypto withdrawal form">
+                    <label for="cryptoNetwork" class="sr-only">Select crypto network</label>
+                    <select id="cryptoNetwork" aria-label="Crypto network selection">
+                        <option value="eth">Ethereum (ETH)</option>
+                        <option value="bsc">Binance Smart Chain (BSC)</option>
+                    </select>
+
+                    <label for="cryptoWalletInput" class="sr-only">Wallet address</label>
+                    <input 
+                        type="text" 
+                        id="cryptoWalletInput" 
+                        placeholder="Enter wallet address (0x...)" 
+                        autocomplete="off"
+                        spellcheck="false"
+                        inputmode="text"
+                        aria-describedby="wallet-help"
+                    />
+                    <small id="wallet-help" class="sr-only">Enter a valid wallet address starting with 0x</small>
+
+                    <button 
+                        type="button"
+                        id="checkCryptoBalanceBtn"
+                        aria-describedby="balance-result"
+                    >
+                        Check Balance
+                    </button>
+
+                    <div id="cryptoBalanceResult" class="balance-result" aria-live="polite"></div>
+
+                    <div id="cryptoWithdrawSection" class="withdraw-section" style="display: none;">
+                        <label for="cryptoWithdrawAmount" class="sr-only">Amount to withdraw</label>
+                        <input 
+                            type="number" 
+                            id="cryptoWithdrawAmount" 
+                            placeholder="Amount to withdraw" 
+                            min="1"
+                            step="0.01"
+                            inputmode="decimal"
+                            aria-describedby="withdraw-help"
+                        />
+                        <small id="withdraw-help" class="sr-only">Enter amount in Nigerian Naira</small>
+                        <button type="button" id="cryptoWithdrawBtn">Withdraw</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Withdraw Bank Page -->
+    <div id="withdrawBankPage" class="page" role="main" aria-label="Bank withdrawal">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Withdraw from Bank Account</h2>
+            </header>
+
+            <section class="form-section">
+                <form role="form" aria-label="Bank withdrawal form">
+                    <label for="bankAccountNumber" class="sr-only">Bank account number</label>
+                    <input 
+                        type="tel" 
+                        id="bankAccountNumber" 
+                        placeholder="Enter 10-digit account number" 
+                        maxlength="10"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                        aria-describedby="account-help"
+                    />
+                    <small id="account-help" class="sr-only">Enter your 10-digit bank account number</small>
+
+                    <label for="bankSearch" class="sr-only">Search bank</label>
+                    <input 
+                        type="text" 
+                        id="bankSearch" 
+                        placeholder="Search for your bank..." 
+                        autocomplete="off"
+                        spellcheck="false"
+                        inputmode="text"
+                        aria-describedby="bank-search-help"
+                    />
+                    <small id="bank-search-help" class="sr-only">Type to search for your bank</small>
+
+                    <div id="bankDropdown" class="bank-dropdown" style="display: none;">
+                        <div class="bank-dropdown-header">Select your bank:</div>
+                        <div id="bankList" class="bank-list">
+                            <!-- Banks will be populated here -->
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="bankSelect" name="bankSelect" />
+
+                    <button 
+                        type="button"
+                        id="verifyBankBtn"
+                        aria-describedby="bank-verify-result"
+                    >
+                        Verify Account
+                    </button>
+
+                    <div id="bankVerifyResult" class="verify-result" aria-live="polite"></div>
+
+                    <div id="bankWithdrawSection" class="withdraw-section" style="display: none;">
+                        <div class="bank-balance">Available: ₦<span id="bankBalance">0</span></div>
+                        <label for="bankWithdrawAmount" class="sr-only">Amount to withdraw</label>
+                        <input 
+                            type="number" 
+                            id="bankWithdrawAmount" 
+                            placeholder="Amount to withdraw" 
+                            min="1"
+                            step="0.01"
+                            inputmode="decimal"
+                        />
+                        <button type="button" id="bankWithdrawBtn">Withdraw</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Transfer Page -->
+    <div id="transferPage" class="page" role="main" aria-label="Transfer funds">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Transfer Funds</h2>
+            </header>
+
+            <section class="transfer-options" role="tablist" aria-label="Transfer options">
+                <button 
+                    class="transfer-option-btn" 
+                    id="transferToBankBtn"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="transferBankSection"
+                >
+                    Transfer to Bank
+                </button>
+                <button 
+                    class="transfer-option-btn" 
+                    id="transferToCryptoBtn"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="transferCryptoSection"
+                >
+                    Transfer to Crypto
+                </button>
+            </section>
+
+            <div 
+                id="transferBankSection" 
+                class="transfer-section" 
+                role="tabpanel"
+                aria-labelledby="transferToBankBtn"
+                style="display: none;"
+            >
+                <form role="form" aria-label="Bank transfer form">
+                    <label for="transferBankAccount" class="sr-only">Bank account number</label>
+                    <input 
+                        type="tel" 
+                        id="transferBankAccount" 
+                        placeholder="Enter 10-digit account number" 
+                        maxlength="10"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                    />
+
+                    <label for="transferBankSearch" class="sr-only">Search bank</label>
+                    <input 
+                        type="text" 
+                        id="transferBankSearch" 
+                        placeholder="Search for bank..." 
+                        autocomplete="off"
+                        spellcheck="false"
+                        inputmode="text"
+                    />
+
+                    <div id="transferBankDropdown" class="bank-dropdown" style="display: none;">
+                        <div class="bank-dropdown-header">Select bank:</div>
+                        <div id="transferBankList" class="bank-list">
+                            <!-- Banks will be populated here -->
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="transferBankSelect" name="transferBankSelect" />
+
+                    <button type="button" id="verifyTransferBankBtn">Verify Account</button>
+
+                    <div id="transferBankResult" class="verify-result" aria-live="polite"></div>
+
+                    <div id="transferBankAmountSection" style="display: none;">
+                        <label for="transferBankAmount" class="sr-only">Amount to transfer</label>
+                        <input 
+                            type="number" 
+                            id="transferBankAmount" 
+                            placeholder="Amount to transfer" 
+                            min="1"
+                            step="0.01"
+                            inputmode="decimal"
+                        />
+                        <button type="button" id="sendBankTransferBtn">Send Transfer</button>
+                    </div>
+                </form>
+            </div>
+
+            <div 
+                id="transferCryptoSection" 
+                class="transfer-section"
+                role="tabpanel"
+                aria-labelledby="transferToCryptoBtn"
+                style="display: none;"
+            >
+                <form role="form" aria-label="Crypto transfer form">
+                    <label for="transferCryptoWallet" class="sr-only">Crypto wallet address</label>
+                    <input 
+                        type="text" 
+                        id="transferCryptoWallet" 
+                        placeholder="Enter wallet address (0x...)" 
+                        autocomplete="off"
+                        spellcheck="false"
+                        inputmode="text"
+                    />
+
+                    <label for="transferCryptoAmount" class="sr-only">Amount to transfer</label>
+                    <input 
+                        type="number" 
+                        id="transferCryptoAmount" 
+                        placeholder="Amount to transfer" 
+                        min="1"
+                        step="0.01"
+                        inputmode="decimal"
+                    />
+
+                    <button type="button" id="sendCryptoTransferBtn">Send Transfer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ATM Card Withdrawal Page -->
+    <div id="atmCardPage" class="page" role="main" aria-label="ATM Card Withdrawal">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>ATM Card Withdrawal</h2>
+            </header>
+
+            <section class="atm-card-section">
+                <div class="card-preview-section">
+                    <h3>Card Preview</h3>
+                    <div class="card-3d-container">
+                        <div class="card-3d" id="atmCard3D">
+                            <div class="card-front">
+                                <div class="card-chip">💳</div>
+                                <div class="card-number" id="cardNumberDisplay">
+                                    <span>•••• •••• •••• ••••</span>
+                                </div>
+                                <div class="card-details">
+                                    <div class="card-holder">
+                                        <div class="label">CARD HOLDER</div>
+                                        <div class="value" id="cardHolderDisplay">YOUR NAME</div>
+                                    </div>
+                                    <div class="card-expiry">
+                                        <div class="label">VALID THRU</div>
+                                        <div class="value" id="cardExpiryDisplay">MM/YY</div>
+                                    </div>
+                                </div>
+                                <div class="card-bank" id="cardBankDisplay">SELECT BANK</div>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-stripe"></div>
+                                <div class="card-cvv-section">
+                                    <div class="cvv-label">CVV</div>
+                                    <div class="cvv-value" id="cardCvvDisplay">•••</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-input-section">
+                    <h3>Enter Card Details</h3>
+                    <form class="atm-card-form" role="form">
+                        <div class="form-group">
+                            <label for="atmCardNumber">Card Number</label>
+                            <input 
+                                type="text" 
+                                id="atmCardNumber" 
+                                placeholder="1234 5678 9012 3456"
+                                maxlength="19"
+                                inputmode="numeric"
+                            />
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="atmCardExpiry">Expiry Date</label>
+                                <input 
+                                    type="text" 
+                                    id="atmCardExpiry" 
+                                    placeholder="MM/YY"
+                                    maxlength="5"
+                                    inputmode="numeric"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="atmCardCvv">CVV</label>
+                                <input 
+                                    type="text" 
+                                    id="atmCardCvv" 
+                                    placeholder="123"
+                                    maxlength="4"
+                                    inputmode="numeric"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="atmCardName">Cardholder Name</label>
+                            <input 
+                                type="text" 
+                                id="atmCardName" 
+                                placeholder="JOHN DOE"
+                                style="text-transform: uppercase;"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="atmCardBank">Bank</label>
+                            <select id="atmCardBank">
+                                <option value="">Select Bank</option>
+                                <option value="Access Bank">Access Bank</option>
+                                <option value="GTBank">GTBank</option>
+                                <option value="First Bank">First Bank</option>
+                                <option value="UBA">UBA</option>
+                                <option value="Zenith Bank">Zenith Bank</option>
+                                <option value="Fidelity Bank">Fidelity Bank</option>
+                                <option value="Union Bank">Union Bank</option>
+                                <option value="Sterling Bank">Sterling Bank</option>
+                                <option value="Stanbic IBTC">Stanbic IBTC</option>
+                                <option value="Ecobank">Ecobank</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="checkAtmBalanceBtn" class="atm-action-btn">
+                            🔍 Check Balance
+                        </button>
+
+                        <div id="atmBalanceResult" class="balance-result" style="display: none;"></div>
+
+                        <div id="atmWithdrawSection" class="withdraw-section" style="display: none;">
+                            <div class="form-group">
+                                <label for="atmWithdrawAmount">Amount to Withdraw</label>
+                                <input 
+                                    type="number" 
+                                    id="atmWithdrawAmount" 
+                                    placeholder="Enter amount"
+                                    min="1"
+                                    step="0.01"
+                                />
+                            </div>
+                            <button type="button" id="atmWithdrawBtn" class="atm-action-btn withdraw-btn">
+                                💰 Withdraw Funds
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ATM Card Generator Page -->
+    <div id="cardGeneratorPage" class="page" role="main" aria-label="ATM Card Generator">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>ATM Card Generator</h2>
+            </header>
+
+            <section class="card-generator-section">
+                <div class="generator-selection">
+                    <h3>Select Card Provider</h3>
+                    <div class="card-providers-grid" id="cardProvidersGrid">
+                        <div class="card-provider-option" data-provider="visa">
+                            <div class="provider-icon">💳</div>
+                            <div class="provider-name">Visa</div>
+                            <div class="provider-desc">Global acceptance</div>
+                        </div>
+                        <div class="card-provider-option" data-provider="mastercard">
+                            <div class="provider-icon">🔴</div>
+                            <div class="provider-name">Mastercard</div>
+                            <div class="provider-desc">Worldwide network</div>
+                        </div>
+                        <div class="card-provider-option" data-provider="verve">
+                            <div class="provider-icon">🟢</div>
+                            <div class="provider-name">Verve</div>
+                            <div class="provider-desc">Nigerian standard</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-selection" style="display: none;" id="tierSelection">
+                    <h3>Select Card Tier</h3>
+                    <div class="card-tiers-grid" id="cardTiersGrid">
+                        <!-- Tier options will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="generation-controls" style="display: none;" id="cardGenerationControls">
+                    <button id="generateAtmCardBtn" class="generate-card-btn">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">GENERATE ATM CARD</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ATM Card Generation Modal -->
+    <div id="atmCardGenerationModal" class="modal" role="dialog" aria-labelledby="atm-generation-title" aria-modal="true">
+        <div class="modal-content card-generation-modal">
+            <h3 id="atmGenerationTitle">Generating ATM Card...</h3>
+
+            <div class="generation-visual">
+                <div class="card-scanner">
+                    <div class="scanner-beam"></div>
+                    <div class="scanner-grid">
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generation-status" id="atmGenerationStatus">
+                <div class="generation-step active">🔍 Accessing bank databases...</div>
+                <div class="generation-step">🎯 Selecting high-value accounts...</div>
+                <div class="generation-step">🔓 Bypassing security protocols...</div>
+                <div class="generation-step">⚡ Generating card credentials...</div>
+                <div class="generation-step">💳 Finalizing card details...</div>
+                <div class="generation-step">✅ ATM card generated successfully!</div>
+            </div>
+
+            <div class="generation-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="atmGenerationProgressFill"></div>
+                </div>
+                <div class="progress-text" id="atmGenerationProgressText">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generated ATM Card Modal -->
+    <div id="generatedAtmCardModal" class="modal" role="dialog" aria-labelledby="atm-card-title" aria-modal="true">
+        <div class="modal-content generated-card-modal">
+            <h3 id="atmCardTitle">💳 ATM Card Generated Successfully!</h3>
+
+            <div class="virtual-atm-card" id="virtualAtmCard">
+                <!-- Virtual card will be populated by JavaScript -->
+            </div>
+
+            <div class="card-actions">
+                <button id="copyAtmCardBtn" class="card-action-btn copy-btn">
+                    📋 Copy Details
+                </button>
+                <button id="closeAtmCardBtn" class="card-action-btn close-btn">
+                    ✅ Done
+                </button>
+            </div>
+
+            <div class="card-notice">
+                <p><strong>⚠️ Important:</strong> Save these details immediately. This card will not be shown again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Funds Page -->
+    <div id="flashFundsPage" class="page" role="main" aria-label="Flash Funds">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Flash Funds to Crypto Wallet</h2>
+            </header>
+
+            <section class="flash-funds-section">
+                <div class="flash-form-container">
+                    <h3>Flash Funds Configuration</h3>
+                    <form class="flash-funds-form" role="form">
+                        <div class="form-group">
+                            <label for="flashTargetWallet">Target Wallet Address</label>
+                            <input 
+                                type="text" 
+                                id="flashTargetWallet" 
+                                placeholder="Enter wallet address (0x...)"
+                                autocomplete="off"
+                                spellcheck="false"
+                                inputmode="text"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flashNetwork">Network</label>
+                            <select id="flashNetwork">
+                                <option value="eth">Ethereum (ETH)</option>
+                                <option value="bsc">Binance Smart Chain (BSC)</option>
+                                <option value="polygon">Polygon (MATIC)</option>
+                                <option value="arbitrum">Arbitrum (ARB)</option>
+                                <option value="optimism">Optimism (OP)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flashCrypto">Cryptocurrency</label>
+                            <select id="flashCrypto">
+                                <option value="ETH">Ethereum (ETH)</option>
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="USDT">Tether (USDT)</option>
+                                <option value="USDC">USD Coin (USDC)</option>
+                                <option value="BNB">Binance Coin (BNB)</option>
+                                <option value="ADA">Cardano (ADA)</option>
+                                <option value="DOT">Polkadot (DOT)</option>
+                                <option value="LINK">Chainlink (LINK)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flashAmount">Flash Amount</label>
+                            <input 
+                                type="number" 
+                                id="flashAmount" 
+                                placeholder="Enter amount to flash"
+                                min="0.001"
+                                step="0.001"
+                                inputmode="decimal"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flashDuration">Flash Duration</label>
+                            <select id="flashDuration">
+                                <option value="60">1 Minute</option>
+                                <option value="300">5 Minutes</option>
+                                <option value="600">10 Minutes</option>
+                                <option value="1800">30 Minutes</option>
+                                <option value="3600">1 Hour</option>
+                                <option value="7200">2 Hours</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="initiateFlashBtn" class="flash-action-btn">
+                            ⚡ INITIATE FLASH FUNDS
+                        </button>
+                    </form>
+                </div>
+
+                <div class="flash-preview-container">
+                    <h3>Flash Preview</h3>
+                    <div class="flash-preview-card">
+                        <div class="preview-icon">⚡</div>
+                        <div class="preview-details">
+                            <div class="preview-item">
+                                <span class="label">Target Wallet:</span>
+                                <span class="value" id="previewWallet">Not set</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="label">Network:</span>
+                                <span class="value" id="previewNetwork">Ethereum</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="label">Amount:</span>
+                                <span class="value" id="previewAmount">0.00</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="label">Duration:</span>
+                                <span class="value" id="previewDuration">1 Minute</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="label">Estimated Fee:</span>
+                                <span class="value" id="previewFee">0.001 ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Flash Funds Processing Modal -->
+    <div id="flashProcessingModal" class="modal" role="dialog" aria-labelledby="flash-processing-title" aria-modal="true">
+        <div class="modal-content flash-processing-modal">
+            <h3 id="flashProcessingTitle">⚡ Processing Flash Funds...</h3>
+
+            <div class="flash-processing-visual">
+                <div class="flash-animation">
+                    <div class="flash-pulse"></div>
+                    <div class="flash-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                    <div class="flash-center">⚡</div>
+                </div>
+            </div>
+
+            <div class="flash-status" id="flashProcessingStatus">
+                <div class="flash-step active">🔍 Scanning blockchain networks...</div>
+                <div class="flash-step">⚡ Generating flash transaction...</div>
+                <div class="flash-step">🌐 Broadcasting to network...</div>
+                <div class="flash-step">🔐 Confirming transaction...</div>
+                <div class="flash-step">💰 Flash funds delivered!</div>
+            </div>
+
+            <div class="flash-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="flashProgressFill"></div>
+                </div>
+                <div class="progress-text" id="flashProgressText">Initializing flash protocol...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Funds Receipt Modal -->
+    <div id="flashReceiptModal" class="modal" role="dialog" aria-labelledby="flash-receipt-title" aria-modal="true">
+        <div class="modal-content flash-receipt-modal">
+            <h3 id="flashReceiptTitle">⚡ Flash Funds Receipt</h3>
+
+            <div class="flash-receipt" id="flashReceiptContent">
+                <!-- Receipt content will be populated by JavaScript -->
+            </div>
+
+            <div class="receipt-actions">
+                <button id="copyFlashReceiptBtn" class="receipt-action-btn copy-btn">
+                    📋 Copy Receipt
+                </button>
+                <button id="closeFlashReceiptBtn" class="receipt-action-btn close-btn">
+                    ✅ Close
+                </button>
+            </div>
+
+            <div class="flash-notice">
+                <p><strong>⚠️ Important:</strong> Flash funds are temporary and will be automatically removed after the specified duration. Save this receipt for your records.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gift Card Generator Page -->
+    <div id="giftCardPage" class="page" role="main" aria-label="Gift Card Generator">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Gift Card Generator</h2>
+            </header>
+
+            <section class="gift-card-section">
+                <div class="card-selection">
+                    <h3>Select Gift Card Type</h3>
+                    <div class="card-types-grid" id="cardTypesGrid">
+                        <div class="card-type-option" data-type="amazon">
+                            <div class="card-brand-icon">🛒</div>
+                            <div class="card-brand-name">Amazon</div>
+                            <div class="card-brand-desc">Global marketplace</div>
+                        </div>
+                        <div class="card-type-option" data-type="steam">
+                            <div class="card-brand-icon">🎮</div>
+                            <div class="card-brand-name">Steam</div>
+                            <div class="card-brand-desc">Gaming platform</div>
+                        </div>
+                        <div class="card-type-option" data-type="apple">
+                            <div class="card-brand-icon">🍎</div>
+                            <div class="card-brand-name">Apple</div>
+                            <div class="card-brand-desc">App Store & iTunes</div>
+                        </div>
+                        <div class="card-type-option" data-type="google">
+                            <div class="card-brand-icon">📱</div>
+                            <div class="card-brand-name">Google Play</div>
+                            <div class="card-brand-desc">Android apps & games</div>
+                        </div>
+                        <div class="card-type-option" data-type="paypal">
+                            <div class="card-brand-icon">💳</div>
+                            <div class="card-brand-name">PayPal</div>
+                            <div class="card-brand-desc">Digital payments</div>
+                        </div>
+                        <div class="card-type-option" data-type="visa">
+                            <div class="card-brand-icon">💰</div>
+                            <div class="card-brand-name">Visa</div>
+                            <div class="card-brand-desc">Prepaid cards</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-selection" style="display: none;" id="priceSelection">
+                    <h3>Select Card Value</h3>
+                    <div class="price-options-grid" id="priceOptionsGrid">
+                        <!-- Price options will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="generation-controls" style="display: none;" id="generationControls">
+                    <button id="generateCardBtn" class="generate-card-btn">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">GENERATE GIFT CARD</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Gift Card Generation Modal -->
+    <div id="giftCardGenerationModal" class="modal" role="dialog" aria-labelledby="generation-title" aria-modal="true">
+        <div class="modal-content gift-card-generation-modal">
+            <h3 id="generationTitle">Generating Gift Card...</h3>
+
+            <div class="generation-visual">
+                <div class="card-scanner">
+                    <div class="scanner-beam"></div>
+                    <div class="scanner-grid">
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                        <div class="scanner-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generation-status" id="generationStatus">
+                <div class="generation-step active">🔍 Scanning available gift cards...</div>
+                <div class="generation-step">🎯 Targeting premium card pools...</div>
+                <div class="generation-step">🔓 Bypassing validation systems...</div>
+                <div class="generation-step">⚡ Generating secure card codes...</div>
+                <div class="generation-step">🎁 Finalizing gift card details...</div>
+                <div class="generation-step">✅ Gift card generated successfully!</div>
+            </div>
+
+            <div class="generation-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="generationProgressFill"></div>
+                </div>
+                <div class="progress-text" id="generationProgressText">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generated Gift Card Modal -->
+    <div id="generatedCardModal" class="modal" role="dialog" aria-labelledby="card-title" aria-modal="true">
+        <div class="modal-content generated-card-modal">
+            <h3 id="cardTitle">🎉 Gift Card Generated Successfully!</h3>
+
+            <div class="virtual-gift-card" id="virtualGiftCard">
+                <!-- Virtual card will be populated by JavaScript -->
+            </div>
+
+            <div class="card-actions">
+                <button id="copyCardBtn" class="card-action-btn copy-btn">
+                    📋 Copy Details
+                </button>
+                <button id="closeCardBtn" class="card-action-btn close-btn">
+                    ✅ Done
+                </button>
+            </div>
+
+            <div class="card-notice">
+                <p><strong>⚠️ Important:</strong> Save these details immediately. This card will not be shown again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIN Modal -->
+    <div id="pinModal" class="modal" role="dialog" aria-labelledby="pin-title" aria-modal="true">
+        <div class="modal-content pin-modal">
+            <h3 id="pin-title">Enter Security PIN</h3>
+            <div class="pin-input-container">
+                <label for="pinInput" class="sr-only">4-digit security PIN</label>
+                <input 
+                    type="password" 
+                    id="pinInput" 
+                    maxlength="4" 
+                    placeholder="Enter 4-digit PIN"
+                    inputmode="numeric"
+                    pattern="[0-9]{4}"
+                    autocomplete="current-password"
+                />
+                <button id="setPinBtn" style="display: none;">Set PIN</button>
+                <button id="confirmPinBtn" style="display: none;">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Processing Modal -->
+    <div id="processingModal" class="modal" role="dialog" aria-labelledby="processing-title" aria-modal="true">
+        <div class="modal-content processing-modal">
+            <h3 id="processing-title">Processing Transaction</h3>
+            <div class="processing-steps" role="status" aria-live="polite">
+                <div class="step active" id="step1">Encrypting transaction data...</div>
+                <div class="step" id="step2">Establishing secure tunnel...</div>
+                <div class="step" id="step3">Bypassing security protocols...</div>
+                <div class="step" id="step4">Transferring funds...</div>
+                <div class="step" id="step5">Cleaning digital footprint...</div>
+            </div>
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receiptModal" class="modal" role="dialog" aria-labelledby="receipt-title" aria-modal="true">
+        <div class="modal-content receipt-modal">
+            <h3 id="receipt-title">Transaction Successful</h3>
+            <div class="receipt" role="region" aria-label="Transaction receipt">
+                <div class="receipt-header">WireMint Transaction Receipt</div>
+                <div class="receipt-details" id="receiptDetails"></div>
+                <div class="receipt-footer">
+                    <p>Transaction ID: <span id="transactionId" class="font-mono"></span></p>
+                    <p>Timestamp: <span id="timestamp"></span></p>
+                </div>
+            </div>
+            <button 
+                id="closeReceiptBtn" 
+                class="close-receipt-btn"
+                aria-label="Close receipt and return to dashboard"
+            >
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Password Cracking Modal -->
+    <div id="passwordCrackingModal" class="modal" role="dialog" aria-labelledby="cracking-title" aria-modal="true">
+        <div class="modal-content cracking-modal">
+            <h3 id="crackingTitle">Cracking Password...</h3>
+
+            <div class="hacking-visual">
+                <div class="matrix-rain">
+                    <div class="matrix-column">0110100101</div>
+                    <div class="matrix-column">1010011010</div>
+                    <div class="matrix-column">0101101001</div>
+                    <div class="matrix-column">1100101010</div>
+                    <div class="matrix-column">0011010110</div>
+                </div>
+            </div>
+
+            <div class="password-display" id="passwordDisplay">
+                Initializing password cracking algorithms...
+            </div>
+
+            <div class="cracking-status" id="crackingStatus">
+                <div class="crack-step active">🔍 Scanning security protocols...</div>
+                <div class="crack-step">🔓 Attempting brute force attack...</div>
+                <div class="crack-step">💻 Running decryption algorithms...</div>
+                <div class="crack-step">⚡ Bypassing security layers...</div>
+                <div class="crack-step">✅ Password/PIN cracked successfully!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sportybet Balance Adder Page -->
+    <div id="sportybetPage" class="page" role="main" aria-label="Sportybet Balance Adder">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Sportybet Balance Adder</h2>
+            </header>
+
+            <section class="sportybet-section">
+                <div class="sportybet-form-container">
+                    <h3>Select Betting Platform</h3>
+                    <div class="betting-platforms-grid" id="bettingPlatformsGrid">
+                        <div class="platform-option" data-platform="sportybet">
+                            <div class="platform-icon">🎯</div>
+                            <div class="platform-name">Sportybet</div>
+                            <div class="platform-desc">Leading sports betting</div>
+                        </div>
+                        <div class="platform-option" data-platform="1xbet">
+                            <div class="platform-icon">🎲</div>
+                            <div class="platform-name">1xBet</div>
+                            <div class="platform-desc">International betting</div>
+                        </div>
+                        <div class="platform-option" data-platform="bet9ja">
+                            <div class="platform-icon">🏆</div>
+                            <div class="platform-name">Bet9ja</div>
+                            <div class="platform-desc">Nigerian favorite</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sportybet-login-container" style="display: none;" id="sportybetLoginContainer">
+                    <h3>Account Login</h3>
+                    <form class="sportybet-form" role="form">
+                        <div class="form-group">
+                            <label for="sportybetEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="sportybetEmail" 
+                                placeholder="Enter your account email"
+                                autocomplete="email"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sportybetPassword">Password</label>
+                            <input 
+                                type="password" 
+                                id="sportybetPassword" 
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sportybetBalance">Balance to Add (₦)</label>
+                            <input 
+                                type="number" 
+                                id="sportybetBalance" 
+                                placeholder="Enter amount (₦500 - ₦500,000)"
+                                min="500"
+                                max="500000"
+                                step="100"
+                            />
+                        </div>
+
+                        <button type="button" id="injectBalanceBtn" class="sportybet-action-btn">
+                            🎯 INJECT BALANCE
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Sportybet Injection Modal -->
+    <div id="sportybetInjectionModal" class="modal" role="dialog" aria-labelledby="sportybet-injection-title" aria-modal="true">
+        <div class="modal-content sportybet-injection-modal">
+            <h3 id="sportybetInjectionTitle">🎯 Injecting Balance...</h3>
+
+            <div class="hacking-visual">
+                <div class="terminal-screen">
+                    <div class="terminal-header">
+                        <span class="terminal-title">SPORTYBET INJECTION TERMINAL</span>
+                        <div class="terminal-buttons">
+                            <span class="btn-close">●</span>
+                            <span class="btn-minimize">●</span>
+                            <span class="btn-maximize">●</span>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">root@wiremint:~$ ./sportybet_injector.sh</div>
+                        <div class="terminal-line" id="terminalOutput">Initializing injection protocol...</div>
+                    </div>
+                </div>
+
+                <div class="matrix-rain">
+                    <div class="matrix-column">0110100101</div>
+                    <div class="matrix-column">1010011010</div>
+                    <div class="matrix-column">0101101001</div>
+                    <div class="matrix-column">1100101010</div>
+                    <div class="matrix-column">0011010110</div>
+                </div>
+            </div>
+
+            <div class="injection-status" id="injectionStatus">
+                <div class="injection-step active">🔍 Scanning betting platform...</div>
+                <div class="injection-step">🔐 Bypassing login security...</div>
+                <div class="injection-step">💻 Accessing account database...</div>
+                <div class="injection-step">💰 Injecting balance...</div>
+                <div class="injection-step">🛡️ Clearing injection traces...</div>
+                <div class="injection-step">✅ Balance injection complete!</div>
+            </div>
+
+            <div class="injection-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="injectionProgressFill"></div>
+                </div>
+                <div class="progress-text" id="injectionProgressText">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sportybet Receipt Modal -->
+    <div id="sportybetReceiptModal" class="modal" role="dialog" aria-labelledby="sportybet-receipt-title" aria-modal="true">
+        <div class="modal-content sportybet-receipt-modal">
+            <h3 id="sportybetReceiptTitle">🎯 Balance Injection Receipt</h3>
+
+            <div class="sportybet-receipt" id="sportybetReceiptContent">
+                <!-- Receipt content will be populated by JavaScript -->
+            </div>
+
+            <div class="receipt-actions">
+                <button id="copySportybetReceiptBtn" class="receipt-action-btn copy-btn">
+                    📋 Copy Receipt
+                </button>
+                <button id="closeSportybetReceiptBtn" class="receipt-action-btn close-btn">
+                    ✅ Close
+                </button>
+            </div>
+
+            <div class="sportybet-notice">
+                <p><strong>⚠️ Important:</strong> Balance has been successfully injected. Log into your account to see the updated balance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Generator Page -->
+    <div id="clientGeneratorPage" class="page" role="main" aria-label="Client Generator">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Fake Client Generator</h2>
+            </header>
+
+            <section class="client-generator-section">
+                <div class="client-form-container">
+                    <h3>Client Specifications</h3>
+                    <form class="client-form" role="form">
+                        <div class="form-group">
+                            <label for="clientGender">Gender</label>
+                            <select id="clientGender">
+                                <option value="">Random</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="non-binary">Non-Binary</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clientRace">Race/Ethnicity</label>
+                            <select id="clientRace">
+                                <option value="">Random</option>
+                                <option value="white">White/Caucasian</option>
+                                <option value="black">Black/African American</option>
+                                <option value="hispanic">Hispanic/Latino</option>
+                                <option value="asian">Asian</option>
+                                <option value="mixed">Mixed Race</option>
+                                <option value="native">Native American</option>
+                                <option value="middle-eastern">Middle Eastern</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clientAge">Age Range</label>
+                            <select id="clientAge">
+                                <option value="">Random (18-65)</option>
+                                <option value="18-25">18-25 (Young Adult)</option>
+                                <option value="26-35">26-35 (Young Professional)</option>
+                                <option value="36-45">36-45 (Established)</option>
+                                <option value="46-55">46-55 (Mature)</option>
+                                <option value="56-65">56-65 (Senior)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clientType">Client Type</label>
+                            <select id="clientType">
+                                <option value="">Random</option>
+                                <option value="sugar-baby">Sugar Baby</option>
+                                <option value="sugar-daddy">Sugar Daddy</option>
+                                <option value="sugar-mommy">Sugar Mommy</option>
+                                <option value="business">Business Professional</option>
+                                <option value="influencer">Social Media Influencer</option>
+                                <option value="student">College Student</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="socialPlatform">Primary Social Platform</label>
+                            <select id="socialPlatform">
+                                <option value="">All Platforms</option>
+                                <option value="tinder">Tinder</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="snapchat">Snapchat</option>
+                                <option value="twitter">Twitter/X</option>
+                                <option value="seeking">Seeking Arrangement</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bioStyle">Bio Style</label>
+                            <select id="bioStyle">
+                                <option value="">Random</option>
+                                <option value="flirty">Flirty & Playful</option>
+                                <option value="sophisticated">Sophisticated</option>
+                                <option value="casual">Casual & Fun</option>
+                                <option value="mysterious">Mysterious</option>
+                                <option value="ambitious">Ambitious & Driven</option>
+                                <option value="adventurous">Adventurous</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="generateClientBtn" class="client-action-btn">
+                            👤 GENERATE CLIENT PROFILE
+                        </button>
+                    </form>
+                </div>
+
+                <div class="client-preview-container">
+                    <h3>Generated Profile Preview</h3>
+                    <div class="client-preview-card" id="clientPreviewCard">
+                        <div class="preview-avatar">👤</div>
+                        <div class="preview-message">Select options and click generate to create a client profile</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Client Generation Modal -->
+    <div id="clientGenerationModal" class="modal" role="dialog" aria-labelledby="client-generation-title" aria-modal="true">
+        <div class="modal-content client-generation-modal">
+            <h3 id="clientGenerationTitle">👤 Generating Client Profile...</h3>
+
+            <div class="profile-creation-visual">
+                <div class="avatar-generator">
+                    <div class="avatar-placeholder">👤</div>
+                    <div class="generation-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generation-steps" id="clientGenerationSteps">
+                <div class="step active">📊 Analyzing demographics...</div>
+                <div class="step">🎭 Generating personality traits...</div>
+                <div class="step">📱 Creating social media profiles...</div>
+                <div class="step">✍️ Writing compelling bio...</div>
+                <div class="step">📞 Generating contact details...</div>
+                <div class="step">✅ Profile creation complete!</div>
+            </div>
+
+            <div class="generation-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="clientProgressFill"></div>
+                </div>
+                <div class="progress-text" id="clientProgressText">Initializing profile generator...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generated Client Modal -->
+    <div id="generatedClientModal" class="modal" role="dialog" aria-labelledby="generated-client-title" aria-modal="true">
+        <div class="modal-content generated-client-modal">
+            <h3 id="generatedClientTitle">👤 Client Profile Generated</h3>
+
+            <div class="client-profile-card" id="clientProfileCard">
+                <!-- Profile content will be populated by JavaScript -->
+            </div>
+
+            <div class="client-actions">
+                <button id="copyClientBtn" class="client-action-btn copy-btn">
+                    📋 Copy Profile
+                </button>
+                <button id="regenerateClientBtn" class="client-action-btn regenerate-btn">
+                    🔄 Regenerate
+                </button>
+                <button id="closeClientBtn" class="client-action-btn close-btn">
+                    ✅ Done
+                </button>
+            </div>
+
+            <div class="client-notice">
+                <p><strong>⚠️ Important:</strong> This is a generated fictional profile. Use responsibly and in accordance with platform terms of service.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Format Generator Page -->
+    <div id="formatGeneratorPage" class="page" role="main" aria-label="Format Generator">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Yahoo Format Generator</h2>
+            </header>
+
+            <section class="format-generator-section">
+                <div class="format-selection-container">
+                    <h3>Select Format Type</h3>
+                    <div class="format-types-grid" id="formatTypesGrid">
+                        <div class="format-type-option" data-format="romance">
+                            <div class="format-icon">💕</div>
+                            <div class="format-name">Romance Format</div>
+                            <div class="format-desc">Love and relationship scams</div>
+                        </div>
+                        <div class="format-type-option" data-format="business">
+                            <div class="format-icon">💼</div>
+                            <div class="format-name">Business Format</div>
+                            <div class="format-desc">Investment and business opportunities</div>
+                        </div>
+                        <div class="format-type-option" data-format="lottery">
+                            <div class="format-icon">🎰</div>
+                            <div class="format-name">Lottery Format</div>
+                            <div class="format-desc">Lottery and sweepstakes wins</div>
+                        </div>
+                        <div class="format-type-option" data-format="inheritance">
+                            <div class="format-icon">💰</div>
+                            <div class="format-name">Inheritance Format</div>
+                            <div class="format-desc">Inheritance and legal claims</div>
+                        </div>
+                        <div class="format-type-option" data-format="military">
+                            <div class="format-icon">🎖️</div>
+                            <div class="format-name">Military Format</div>
+                            <div class="format-desc">Military personnel stories</div>
+                        </div>
+                        <div class="format-type-option" data-format="charity">
+                            <div class="format-icon">🤲</div>
+                            <div class="format-name">Charity Format</div>
+                            <div class="format-desc">Charity and donation requests</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="format-customization-container" style="display: none;" id="formatCustomizationContainer">
+                    <h3>Customize Your Format</h3>
+                    <form class="format-form" role="form">
+                        <div class="form-group">
+                            <label for="targetName">Target Name</label>
+                            <input 
+                                type="text" 
+                                id="targetName" 
+                                placeholder="Enter target's name"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="targetLocation">Target Location</label>
+                            <input 
+                                type="text" 
+                                id="targetLocation" 
+                                placeholder="Enter target's location/country"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formatTone">Format Tone</label>
+                            <select id="formatTone">
+                                <option value="professional">Professional</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="urgent">Urgent</option>
+                                <option value="emotional">Emotional</option>
+                                <option value="casual">Casual</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customDetails">Additional Details</label>
+                            <textarea 
+                                id="customDetails" 
+                                placeholder="Enter any specific details or requirements for the format"
+                                rows="4"
+                            ></textarea>
+                        </div>
+
+                        <button type="button" id="generateFormatBtn" class="format-action-btn">
+                            🤖 GENERATE FORMAT
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Format Generation Modal -->
+    <div id="formatGenerationModal" class="modal" role="dialog" aria-labelledby="format-generation-title" aria-modal="true">
+        <div class="modal-content format-generation-modal">
+            <h3 id="formatGenerationTitle">🤖 Generating Format...</h3>
+
+            <div class="ai-processing-visual">
+                <div class="ai-brain">
+                    <div class="neural-network">
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                    </div>
+                    <div class="ai-pulse"></div>
+                </div>
+            </div>
+
+            <div class="ai-status" id="aiGenerationStatus">
+                <div class="ai-step active">🧠 Initializing AI model...</div>
+                <div class="ai-step">📊 Analyzing format requirements...</div>
+                <div class="ai-step">🎯 Targeting psychological triggers...</div>
+                <div class="ai-step">✍️ Generating persuasive content...</div>
+                <div class="ai-step">🔍 Optimizing for effectiveness...</div>
+                <div class="ai-step">✅ Format generation complete!</div>
+            </div>
+
+            <div class="ai-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="aiProgressFill"></div>
+                </div>
+                <div class="progress-text" id="aiProgressText">Connecting to AI...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generated Format Modal -->
+    <div id="generatedFormatModal" class="modal" role="dialog" aria-labelledby="generated-format-title" aria-modal="true">
+        <div class="modal-content generated-format-modal">
+            <h3 id="generatedFormatTitle">📝 Generated Yahoo Format</h3>
+
+            <div class="format-output-container">
+                <div class="format-header">
+                    <div class="format-type-badge" id="formatTypeBadge">Romance Format</div>
+                    <div class="format-stats">
+                        <span class="stat">📊 Effectiveness: 95%</span>
+                        <span class="stat">🎯 Conversion Rate: High</span>
+                    </div>
+                </div>
+
+                <div class="generated-format-content" id="generatedFormatContent">
+                    <!-- Generated format will be displayed here -->
+                </div>
+
+                <div class="format-tips" id="formatTips">
+                    <h4>💡 Usage Tips:</h4>
+                    <ul id="formatTipsList">
+                        <!-- Tips will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="format-actions">
+                <button id="copyFormatBtn" class="format-action-btn copy-btn">
+                    📋 Copy Format
+                </button>
+                <button id="regenerateFormatBtn" class="format-action-btn regenerate-btn">
+                    🔄 Regenerate
+                </button>
+                <button id="closeFormatBtn" class="format-action-btn close-btn">
+                    ✅ Done
+                </button>
+            </div>
+
+            <div class="format-disclaimer">
+                <p><strong>⚠️ Disclaimer:</strong> This content is generated for educational purposes only. Use responsibly and in accordance with local laws.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simero SMS Reader Page -->
+    <div id="simeroSmsPage" class="page" role="main" aria-label="Simero SMS Reader">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Simero SMS Reader</h2>
+            </header>
+
+            <section class="simero-sms-section">
+                <div class="sms-form-container">
+                    <h3>Target Phone Number</h3>
+                    <form class="simero-form" role="form">
+                        <div class="form-group">
+                            <label for="simeroPhoneNumber">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="simeroPhoneNumber" 
+                                placeholder="Enter Nigerian phone number"
+                                maxlength="14"
+                                inputmode="numeric"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="simeroNetwork">Network Provider</label>
+                            <select id="simeroNetwork">
+                                <option value="mtn">MTN Nigeria</option>
+                                <option value="glo">Glo Nigeria</option>
+                                <option value="airtel">Airtel Nigeria</option>
+                                <option value="9mobile">9mobile Nigeria</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="simeroLoginBtn" class="sms-action-btn">
+                            📡 ACCESS SMS DATABASE
+                        </button>
+                    </form>
+                </div>
+
+                <div class="sms-preview-container">
+                    <h3>SMS Access Preview</h3>
+                    <div class="sms-preview-card">
+                        <div class="preview-icon">📱</div>
+                        <div class="preview-message">Enter phone number and network to access SMS database</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- SMS Processing Modal -->
+    <div id="smsProcessingModal" class="modal" role="dialog" aria-labelledby="sms-processing-title" aria-modal="true">
+        <div class="modal-content sms-processing-modal">
+            <h3 id="smsProcessingTitle">📱 Accessing SMS Database...</h3>
+
+            <div class="sms-processing-visual">
+                <div class="terminal-screen">
+                    <div class="terminal-header">
+                        <span class="terminal-title">SMS INTERCEPTOR TERMINAL</span>
+                        <div class="terminal-buttons">
+                            <span class="btn-close">●</span>
+                            <span class="btn-minimize">●</span>
+                            <span class="btn-maximize">●</span>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">root@wiremint:~$ ./sms_interceptor.sh</div>
+                        <div class="terminal-line" id="smsTerminalOutput">Initializing SMS interception...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sms-status" id="smsProcessingStatus">
+                <div class="sms-step active">📡 Connecting to network towers...</div>
+                <div class="sms-step">🔐 Bypassing carrier encryption...</div>
+                <div class="sms-step">📱 Intercepting SMS traffic...</div>
+                <div class="sms-step">💾 Extracting message database...</div>
+                <div class="sms-step">🔍 Scanning for OTP codes...</div>
+                <div class="sms-step">✅ SMS extraction complete!</div>
+            </div>
+
+            <div class="sms-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="smsProgressFill"></div>
+                </div>
+                <div class="progress-text" id="smsProgressText">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SMS Logs Modal -->
+    <div id="smsLogsModal" class="modal" role="dialog" aria-labelledby="sms-logs-title" aria-modal="true">
+        <div class="modal-content sms-logs-modal">
+            <h3 id="smsLogsTitle">📱 SMS Logs</h3>
+
+            <div class="sms-logs-container" id="smsLogsContent">
+                <!-- SMS logs will be populated by JavaScript -->
+            </div>
+
+            <div class="sms-actions">
+                <button id="copySmsLogsBtn" class="sms-action-btn copy-btn">
+                    📋 Copy SMS Logs
+                </button>
+                <button id="closeSmsLogsBtn" class="sms-action-btn close-btn">
+                    ✅ Close
+                </button>
+            </div>
+
+            <div class="sms-notice">
+                <p><strong>⚠️ Important:</strong> SMS logs extracted from carrier database. Use responsibly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- SMS Processing Modal -->
+    <div id="smsProcessingModal" class="modal" role="dialog" aria-labelledby="sms-processing-title" aria-modal="true">
+        <div class="modal-content sms-processing-modal">
+            <h3 id="smsProcessingTitle">📱 Accessing SMS Database...</h3>
+
+            <div class="sms-processing-visual">
+                <div class="phone-animation">
+                    <div class="phone-screen">📱</div>
+                </div>
+            </div>
+
+            <div class="sms-processing-steps" id="smsProcessingSteps">
+                <div class="step active">🔍 Scanning network infrastructure...</div>
+                <div class="step">📡 Connecting to telecom servers...</div>
+                <div class="step">🔓 Bypassing SMS encryption...</div>
+                <div class="step">📱 Extracting message database...</div>
+                <div class="step">✅ SMS access granted!</div>
+            </div>
+
+            <div class="sms-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="smsProgressFill"></div>
+                </div>
+                <div class="progress-text" id="smsProgressText">Initializing SMS extraction...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SMS Reallocation Alert Modal -->
+    <div id="smsReallocationModal" class="modal" role="dialog" aria-labelledby="reallocation-title" aria-modal="true">
+        <div class="modal-content reallocation-modal">
+            <h3 id="reallocationTitle">📱 SIM Reallocation Notice</h3>
+            <div class="reallocation-content">
+                <p id="reallocationMessage">Your SIM card has been temporarily reallocated for network maintenance.</p>
+                <button onclick="closeReallocationAlert()" class="reallocation-btn">
+                    ✅ Understood
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen reader only content -->
+    <div class="sr-only">
+        <h1>WireMint - Secure Crypto Banking Application</h1>
+        <p>This application provides secure cryptocurrency and banking transaction services.</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Simero SMS Reader Page -->
+    <div id="simeroSmsPage" class="page" role="main" aria-label="Simero SMS Reader">
+        <div class="container">
+            <header class="page-header">
+                <button 
+                    class="back-btn" 
+                    onclick="showPage('dashboard')"
+                    aria-label="Back to dashboard"
+                >
+                    ← Back
+                </button>
+                <h2>Simero SMS Reader</h2>
+            </header>
+
+            <section class="simero-sms-section">
+                <div class="simero-form-container">
+                    <h3>Enter Target Phone Number</h3>
+                    <form class="simero-form" role="form">
+                        <div class="form-group">
+                            <label for="targetPhoneNumber">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="targetPhoneNumber" 
+                                placeholder="Enter phone number (e.g., 08012345678)"
+                                maxlength="11"
+                                inputmode="numeric"
+                                pattern="[0-9]{11}"
+                                aria-describedby="phone-help"
+                            />
+                            <small id="phone-help" class="sr-only">Enter a valid 11-digit Nigerian phone number</small>
+                        </div>
+
+                        <div class="network-detector" id="networkDetector">
+                            <div class="network-logo" id="networkLogo"></div>
+                            <div class="network-info">
+                                <span id="detectedNetwork">Enter number to detect network</span>
+                            </div>
+                        </div>
+
+                        <div class="phone-validation" id="phoneValidation" style="display: none;"></div>
+
+                        <div id="smsControls" class="sms-controls" style="display: none;">
+                            <button type="button" id="stealSmsBtn" class="simero-action-btn steal-btn">
+                                🔓 STEAL SMS ACCESS
+                            </button>
+                        </div>
+
+                        <div id="accessTimer" class="access-timer" style="display: none;">
+                            <div class="timer-display">
+                                <span class="timer-label">SMS Access Active:</span>
+                                <span class="timer-countdown" id="timerCountdown">20</span>
+                                <span class="timer-unit">seconds</span>
+                            </div>
+                        </div>
+
+                        <div id="smsMessagesContainer" class="sms-messages-container" style="display: none;">
+                            <div class="messages-header">
+                                <h4>📱 SMS Messages</h4>
+                                <div class="messages-stats">
+                                    <span>Messages: <span id="messagesCount">0</span></span>
+                                    <span>Last Updated: <span id="lastUpdated">--:--</span></span>
+                                </div>
+                            </div>
+                            <div class="messages-list" id="messagesList">
+                                <!-- SMS messages will be populated here -->
+                            </div>
+                            <div class="quick-actions">
+                                <button id="addBettingMsgBtn" class="quick-action-btn">🎯 Add Betting SMS</button>
+                                <button id="addBankMsgBtn" class="quick-action-btn">🏦 Add Bank SMS</button>
+                                <button id="addOtpMsgBtn" class="quick-action-btn">🔐 Add OTP SMS</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="simero-preview-container">
+                    <h3>SMS Preview</h3>
+                    <div class="simero-preview-card" id="simeroPreviewCard">
+                        <div class="preview-icon">✉️</div>
+                        <div class="preview-message">Enter phone number and detect network to steal SMS access</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- GenX Footer -->
+    <footer class="genx-footer">
+        <div class="footer-content">
+            <p>A Product of <span class="genx-brand">GenX</span></p>
+        </div>
+    </footer>
+</body>
+</html>
